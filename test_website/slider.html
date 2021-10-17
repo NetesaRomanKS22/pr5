@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <title>3 Column Layout</title>
+   <script src="assets/js/script.js"></script>
+   <link rel="stylesheet" href="assets/css/layout.css">
+      <link rel="stylesheet" href="assets/css/style.css">
+   <script>
+   window.onload = function() {
+       // ви можете зробити скільки завгодно слайдів
+       let slides = [
+           {
+               title: "Слайд 1",
+               background: src = "assets/img/img1.jpg",
+               link: "http://google.com"
+           },  {
+               title: "Слайд 2",
+               background: src = "assets/img/img2.jpg",
+               link: "http://google.com"
+           }, {
+               title: "Слайд 3",
+               background: src = "assets/img/img3.jpg",
+               link: "http://yahoo.com"
+           }
+       ]
+       Slider.initSlider(slides);
+   };
+</script>
+
+</head>
+<body>
+<header class="header"><img src = "assets/img/icon.jpeg" height = "50" width = "50" /></header>
+<div class="container">
+   <main class="center column">
+       <article>
+           <h1>Slider</h1>
+           <div id="slider" class = "hidden"></div>
+		   
+			<button class =  "prevBtn">Prev</button>
+			<button class = "nextBtn">Next</button>
+			<button class = "hideBtn">Show</button>
+			<button class = "toggleBtn">Start</button>
+			
+			<button class = "firstS">1</button>
+			<button class = "secondS">2</button>
+			<button class = "thirdS">3</button>
+			<script>
+ const prevBtn = document.querySelector('.prevBtn');
+ const nextBtn = document.querySelector('.nextBtn');
+ const hide = document.querySelector('.hideBtn');
+ const firstB = document.querySelector('.firstS');
+  const secondB = document.querySelector('.secondS');
+   const thirdB = document.querySelector('.thirdS');
+const slider_container = document.querySelector('.hidden');
+
+ firstB.addEventListener('click', () => {
+    Slider.setSlide(0);
+ });
+ 
+  secondB.addEventListener('click', () => {
+    Slider.setSlide(1);
+ });
+ 
+  thirdB.addEventListener('click', () => {
+    Slider.setSlide(2);
+ });
+
+
+ prevBtn.addEventListener('click', () => {
+    Slider.prevSlide();
+ });
+
+nextBtn.addEventListener('click',() => {
+    Slider.nextSlide();
+})
+
+hide.addEventListener('click', () =>{
+      if (slider_container.classList.contains("hidden")) {
+    hide.textContent = "Hide";
+  } else {
+    hide.textContent = "Show";
+  }
+
+  slider_container.classList.toggle("hidden");
+})
+
+
+
+const toggle = document.querySelector('.toggleBtn');
+
+toggle.addEventListener('click', (event)=>{
+    if (event.target.classList.contains('start')){
+        event.target.innerHTML = 'Start';
+        clearInterval(interval)
+    } else {
+        event.target.innerHTML = 'Stop';
+        interval = setInterval(()=>{
+            Slider.nextSlide();
+        },3000)
+    }
+    event.target.classList.toggle('start')
+ });
+	
+			</script>
+       </article>
+   </main>
+   <nav class="left column">
+       <h3>Left heading</h3>
+       <ul>
+	   	   <li><a href="index.html">index</a></li>
+           <li><a href="about.html">about</a></li>
+		   <li><a href="contact.html">contact</a></li>
+		   <li><a href="media.html">media</a></li>
+		   <li><a href="table.html">table</a></li>
+       </ul>
+   </nav>
+   <div class="right column">
+       <h3>Right heading</h3>
+       <p></p>
+   </div>
+   <div class="push"></div>
+</div>
+<div class="footer-wrapper">
+   <footer class="footer"><img src = "assets/img/icon.jpeg" height = "50" width = "50" /></footer>
+</div>
+</body>
+</html>
+
