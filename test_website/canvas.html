@@ -4,34 +4,37 @@
    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
    <title>3 Column Layout</title>
    <link rel="stylesheet" href="assets/css/layout.css">
+   <link rel="stylesheet" href="assets/css/canvas.css">
+   <link rel="stylesheet" href="assets/css/style.css">
+   <script src="assets/js/canvas.js">
+   
+</script>
 </head>
 <body>
 <header class="header"><img src = "assets/img/icon.jpeg" height = "50" width = "50" /></header>
 <div class="container">
    <main class="center column">
        <article>
-           <h1>Media</h1>
-  
- <p>
-<video width="320" height="240" controls>
-   <source src="assets/video/video.mp4" type="video/mp4">
-</video>
-</p>
+           <h1>Canvas</h1>
+           <canvas id="draw"></canvas>
+		  <div class="toolbar" id="toolbar">
 
-<p>audio<audio src="assets/music/music.mp3" type="audio/mp3">
-   <source src="assets/music/music.mp3" type="audio/mp3">
-	</audio></p>
-	<p align="center"><iframe src="https://www.youtube.com/watch?v=4lVKlHCd4_g&ab_channel=JamesBartholomew" width="499"
-height="350" frameborder="1" > </iframe></p>
+		  </div>
+		   <p>Color:<input id = "myColor" type = "color"></p>
+		   <p>size:<input id = "brushSize" type = "lineWidth"></p>
+
        </article>
+	   
+		
+		
    </main>
    <nav class="left column">
        <h3>Left heading</h3>
        <ul>
-			<li><a href="index.html">index</a></li>
            <li><a href="about.html">about</a></li>
 		   <li><a href="contact.html">contact</a></li>
-		    <li><a href="canvas.html">canvas</a></li>
+		   <li><a href="media.html">media</a></li>
+		   <li><a href="index.html">index</a></li>
 		   <li><a href="slider.html">slider</a></li>
 		   <li><a href="table.html">table</a></li>
        </ul>
@@ -47,4 +50,3 @@ height="350" frameborder="1" > </iframe></p>
 </div>
 </body>
 </html>
-
